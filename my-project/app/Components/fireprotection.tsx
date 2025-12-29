@@ -1,46 +1,27 @@
 import { Link } from "react-router";
- const products = [
-  {
-    id: 1,
-    name: "Fire Door Key Lock",
-    price: 1800,
-    image: "https://i.postimg.cc/J415YT6Q/jbqhgzlihaloomhifg5e.jpg",
-  },
-  {
-    id: 2,
-    name: "Fire Door Handle Lock",
-    price: 1800,
-    image: "https://i.postimg.cc/NfSL2FH7/rkh5axstqlkaai6ekoxl.jpg",
-  },
-  {
-    id: 3,
-    name: "Magnetic Door Holder",
-    price: 3000,
-    image: "https://i.postimg.cc/gj5chtnx/hgelnvmh2zg89hiaelje.jpg",
-  },
-  {
-    id: 4,
-    name: "Fire Cable",
-    price: 6000,
-    image: "https://i.postimg.cc/28s88tsd/kwkf81blo6nf2abnlfza.webp",
-  },
-  {
-    id: 5,
-    name: "Fire Door (with frame) - 3' x 7'",
-    price: 8000,
-    image: "https://i.postimg.cc/jjXscSLk/ghgcuzaayzdwpmaicjh7.jpg",
-  },
- 
-];
+import { useEffect, useState } from "react";
 
 
 export default function Fireprotection() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("/fireprotection.JSON")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to fetch products");
+        }
+        return res.json();
+      })
+      .then((data) => setProducts(data))
+      .catch((err) => console.error("Error loading products:", err));
+  }, []);
   return (
     <section className="max-w-7xl mx-auto px-6 py-12">
       {/* HEADER */}
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-2xl font-bold">
-         <span className="underline ">Fire Protection</span> <span className="text-green-600 underline-offset-4">Products</span>
+          <span className="underline ">Fire Protection</span> <span className="text-green-600 underline-offset-4">Products</span>
         </h2>
 
         <Link

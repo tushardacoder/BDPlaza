@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Industrial Blower",
+    "price": 3000,
+    "image": "https://i.postimg.cc/8kq99VQr/njw2scoxeglexcqzwkac.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Exhaust Fan 24 Inch",
+    "price": 1999.99,
+    "image": "https://i.postimg.cc/3rDbgby1/hgfe7ityjjmcmy2ib0cj.avif"
+  },
+  {
+    "id": 3,
+    "name": "Exhaust Fan 28 Inch",
+    "price": 2000,
+    "image": "https://i.postimg.cc/MpzPJ6sn/nz3md04o0pv4wit9tnnj.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Exhaust Fan 30 Inch",
+    "price": 1999.99,
+    "image": "https://i.postimg.cc/T1807fL6/xvwe2krlrzvwmsdg4dyh.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Exhaust Fan 32 Inch",
+    "price": 2799.99,
+    "image": "https://i.postimg.cc/T1807fL6/xvwe2krlrzvwmsdg4dyh.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Exhaust Fan 36 Inch",
+    "price": 4000,
+    "image": "https://i.postimg.cc/T1807fL6/xvwe2krlrzvwmsdg4dyh.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Exhaust Fan 40 Inch",
+    "price": 2000,
+    "image": "https://i.postimg.cc/x1dvPcx2/ewlij64lbrk2rkpvxhid.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Exhaust Fan 44 Inch",
+    "price": 2000,
+    "image": "https://i.postimg.cc/T1807fL6/xvwe2krlrzvwmsdg4dyh.jpg"
+  }
+]

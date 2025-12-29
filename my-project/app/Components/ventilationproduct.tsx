@@ -1,58 +1,21 @@
 import { Link } from "react-router";
- const products = [
-  {
-    id: 1,
-    name: "Industrial Blower",
-    price: 3000,
-    image: "https://i.postimg.cc/8kq99VQr/njw2scoxeglexcqzwkac.jpg",
-  },
-  {
-    id: 2,
-    name: "exhaust fan 24 inch size",
-    price: 1999.99,
-    image: "https://i.postimg.cc/3rDbgby1/hgfe7ityjjmcmy2ib0cj.avif",
-  },
-  {
-    id: 3,
-    name: "exhaust fan 28 inch size",
-    price: 2000,
-    image: "https://i.postimg.cc/MpzPJ6sn/nz3md04o0pv4wit9tnnj.jpg",
-  },
-  {
-    id: 4,
-    name: "exhaust fan 30 inch size",
-    price: 1999.99,
-    
-    image: "https://i.postimg.cc/T1807fL6/xvwe2krlrzvwmsdg4dyh.jpg",
-  },
-  {
-    id: 5,
-    name: "exhaust fan 32 inch size",
-    price: 2799.99,
-    image: "https://i.postimg.cc/T1807fL6/xvwe2krlrzvwmsdg4dyh.jpg",
-  },
-  {
-    id: 6,
-    name: "exhaust fan 36 inch size",
-    price: 4000,
-    image: "https://i.postimg.cc/T1807fL6/xvwe2krlrzvwmsdg4dyh.jpg",
-  },
-  {
-    id: 7,
-    name: "exhaust fan 40 inch size",
-    price: 2000,
-    image: "https://i.postimg.cc/x1dvPcx2/ewlij64lbrk2rkpvxhid.jpg",
-  },
-  {
-    id: 8,
-    name: "exhaust fan 44 inch size",
-    price: 2000,
-    image: "https://i.postimg.cc/T1807fL6/xvwe2krlrzvwmsdg4dyh.jpg",
-  },
-];
+ import { useEffect, useState } from "react";
 
 
 export default function Ventilationproduct() {
+   const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("/ventilation.JSON")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to fetch products");
+        }
+        return res.json();
+      })
+      .then((data) => setProducts(data))
+      .catch((err) => console.error("Error loading products:", err));
+  }, []);
   return (
     <section className="max-w-7xl mx-auto px-6 py-12">
       {/* HEADER */}
@@ -69,7 +32,7 @@ export default function Ventilationproduct() {
         </Link>
       </div>
 
-      {/* PRODUCTS GRID */}
+         {/* PRODUCTS GRID */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
         {products.map((product) => (
           <div
@@ -119,5 +82,7 @@ export default function Ventilationproduct() {
         ))}
       </div>
     </section>
+
+      
   );
 }

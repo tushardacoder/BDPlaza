@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Fire Alarm Lyon CDAN",
+    "price": 1000,
+    "image": "https://i.postimg.cc/CLXHMFLV/mypgtbb2cpkvmgjiepbv.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Fixed Temperature Detector 5351E (LPCB)",
+    "price": 1500,
+    "image": "https://i.postimg.cc/kGZ85cCc/kxwza9rebyrqg7ehs1jo.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Smoke Detector-Photo 2351E (LPCB)",
+    "price": 1800,
+    "image": "https://i.postimg.cc/jjKfC2pX/hxpjsxdpebx2qd3yehtl.jpg"
+  },
+  {
+    "id": 4,
+    "name": "High Base A30XZAL",
+    "price": 2500,
+    "image": "https://i.postimg.cc/sXHGncvq/tcwyf1b8grgsbpxf1pj1.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Isolator KABY",
+    "price": 1999.99,
+    "image": "https://i.postimg.cc/jjsWt9fF/wueydataviwevwgmwkzw.webp"
+  },
+  {
+    "id": 6,
+    "name": "Ethernet Adaptor Lyon Panel Kitmey",
+    "price": 1000,
+    "image": "https://i.postimg.cc/nrQr3t8L/kpystq06yezvmnpbx5zk.webp"
+  },
+  {
+    "id": 7,
+    "name": "Lyon back panel verified circuit CDAC0008RD",
+    "price": 1899.97,
+    "image": "https://i.postimg.cc/SQwfkSxL/eo5twnj8oa2c038fbv05.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Verified CPU circuit v2 Lyon control panel CDAC200102",
+    "price": 2000,
+    "image": "https://i.postimg.cc/YC7NLdgj/ho13tompc5ihgnvwrlqy.jpg"
+  }
+]

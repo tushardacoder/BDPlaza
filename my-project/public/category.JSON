@@ -1,0 +1,60 @@
+
+
+[
+  {
+    "id": 1,
+    "name": "Computers",
+    "icon": "FaLaptop",
+    "path": "/category/computers"
+  },
+  {
+    "id": 2,
+    "name": "Electronics",
+    "icon": "FaMicrochip",
+    "path": "/category/electronics"
+  },
+  {
+    "id": 3,
+    "name": "Security",
+    "icon": "FaShieldAlt",
+    "path": "/category/security",
+    "highlight": true
+  },
+  {
+    "id": 4,
+    "name": "Travel",
+    "icon": "FaPlane",
+    "path": "/category/travel"
+  },
+  {
+    "id": 5,
+    "name": "Health",
+    "icon": "FaHeartbeat",
+    "path": "/category/health"
+  },
+  {
+    "id": 6,
+    "name": "Car & Bike",
+    "icon": "FaCar",
+    "path": "/category/car-bike"
+  },
+  {
+    "id": 7,
+    "name": "Furniture",
+    "icon": "FaCouch",
+    "path": "/category/furniture"
+  },
+  {
+    "id": 8,
+    "name": "Real Estate",
+    "icon": "FaBuilding",
+    "path": "/category/real-estate"
+  },
+  {
+    "id": 9,
+    "name": "Books",
+    "icon": "FaBook",
+    "path": "/category/books",
+    "highlight": true
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Fire Door Key Lock",
+    "price": 1800,
+    "image": "https://i.postimg.cc/J415YT6Q/jbqhgzlihaloomhifg5e.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Fire Door Handle Lock",
+    "price": 1800,
+    "image": "https://i.postimg.cc/NfSL2FH7/rkh5axstqlkaai6ekoxl.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Magnetic Door Holder",
+    "price": 3000,
+    "image": "https://i.postimg.cc/gj5chtnx/hgelnvmh2zg89hiaelje.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Fire Cable",
+    "price": 6000,
+    "image": "https://i.postimg.cc/28s88tsd/kwkf81blo6nf2abnlfza.webp"
+  },
+  {
+    "id": 5,
+    "name": "Fire Door (with frame) - 3' x 7'",
+    "price": 8000,
+    "image": "https://i.postimg.cc/jjXscSLk/ghgcuzaayzdwpmaicjh7.jpg"
+  }
+]

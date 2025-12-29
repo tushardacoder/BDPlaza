@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Hand Gloves",
+    "price": 1000,
+    "image": "https://i.postimg.cc/G3BC8QJq/uibfbehgwcu99vqw0u7f.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Exit Light",
+    "price": 1500,
+    "image": "https://i.postimg.cc/L8D70Y3B/hha6njlpfapqg4gpb6tf.jpg"
+  }
+]

@@ -15,6 +15,7 @@ import { Link } from "react-router";
 import { FaArrowRight } from "react-icons/fa";
 
 
+
 const categories = [
     {
         id: 1,
@@ -75,7 +76,7 @@ const categories = [
 ];
 
 export default function Popularcategories() {
-
+     
     return (
         <section className="max-w-7xl mx-auto px-6 py-14">
             {/* HEADER */}

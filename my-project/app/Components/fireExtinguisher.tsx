@@ -1,58 +1,23 @@
 import { Link } from "react-router";
- const products = [
-  {
-    id: 1,
-    name: "ABC Foam 25 kg",
-    price: 6000,
-    image: "https://i.postimg.cc/MTjNpzhB/vhb73vnq97gwl7shu8cb.webp",
-  },
-  {
-    id: 2,
-    name: "ABC Foam 10 kg",
-    price: 6000,
-    image: "https://i.postimg.cc/MTjNpzhB/vhb73vnq97gwl7shu8cb.webp",
-  },
-  {
-    id: 3,
-    name: "ABC Foam 6 kg",
-    price: 5000,
-    image: "https://i.postimg.cc/QMgWG7Ms/kbahp795nkvlylsrx7ub.jpg",
-  },
-  {
-    id: 4,
-    name: "ABC Foam 5 kg",
-    price: 4000,
-    
-    image: "https://i.postimg.cc/c4Kg12Jm/cj856fmtpfdwpy1acbo3.webp",
-  },
-  {
-    id: 5,
-    name: "ABC Foam 3 kg",
-    price: 2000,
-    image: "https://i.postimg.cc/Gmw2LpVG/xhsndefeurexsx7l2yhk.avif",
-  },
-  {
-    id: 6,
-    name: "co2 gas 25 kg",
-    price: 5000,
-    image: "https://i.postimg.cc/SxhMZVyc/qekyaoqyiatknlkzcgdh.webp",
-  },
-  {
-    id: 7,
-    name: "co2 gas 10 kg",
-    price: 4000,
-    image: "https://i.postimg.cc/DfSLm8js/pebkshwyqdw2akbzcmwu.jpg",
-  },
-  {
-    id: 8,
-    name: "co2 gas 6 kg",
-    price: 3999.99,
-    image: "https://i.postimg.cc/SxhMZVyc/qekyaoqyiatknlkzcgdh.webp",
-  },
-];
+import { useEffect, useState } from "react";
+
 
 
 export default function FireExtinguisher() {
+   const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("/fireextinguisher.JSON")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to fetch products");
+        }
+        return res.json();
+      })
+      .then((data) => setProducts(data))
+      .catch((err) => console.error("Error loading products:", err));
+  }, []);
+
   return (
     <section className="max-w-7xl mx-auto px-6 py-12">
       {/* HEADER */}
@@ -69,8 +34,7 @@ export default function FireExtinguisher() {
         </Link>
       </div>
 
-      {/* PRODUCTS GRID */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
         {products.map((product) => (
           <div
             key={product.id}

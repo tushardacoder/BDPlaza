@@ -1,86 +1,98 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const slides = [
+const sliderData = [
   {
     id: 1,
     image: "https://i.postimg.cc/0jtm9N4b/Ecommerce-Banner-1.png",
-    link: "/personal-stall",
   },
   {
     id: 2,
     image: "https://i.postimg.cc/jjz7Lc1Z/Ecommerce-banner-2.png",
-    link: "/business-stall",
   },
 ];
 
-export default function Banner() {
+const HeroSlider = () => {
   const [current, setCurrent] = useState(0);
 
+  // Auto change slide every 5s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) =>
+        prev === sliderData.length - 1 ? 0 : prev + 1
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const prevSlide = () => {
-    setCurrent(current === 0 ? slides.length - 1 : current - 1);
+    setCurrent((prev) =>
+      prev === 0 ? sliderData.length - 1 : prev - 1
+    );
   };
 
   const nextSlide = () => {
-    setCurrent(current === slides.length - 1 ? 0 : current + 1);
+    setCurrent((prev) =>
+      prev === sliderData.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const goToSlide = (index) => {
+    setCurrent(index);
   };
 
   return (
-    <div className="relative max-w-7xl mx-auto overflow-hidden rounded-xl group">
-      
-      {/* MAIN BANNER */}
-      <img
-        src={slides[current].image}
-        alt="banner"
-        className="w-full h-[260px] md:h-[380px] object-cover"
-      />
+    <div className="w-full flex justify-center">
+      <div className="relative w-[90%] md:w-[85%] h-[300px] md:h-[400px] overflow-hidden bg-white flex flex-col items-center justify-center group">
+        {/* Main Slider */}
+        {sliderData.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ease-in-out ${
+              index === current ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <img
+              src={slide.image}
+              alt=""
+              className="w-full h-full object-cover"
+            />
 
-      {/* LEFT SLIDE (on hover) */}
-      <div
-        className="
-          absolute top-0 left-0 h-full w-[260px]
-          -translate-x-full
-          group-hover:translate-x-0
-          transition-transform duration-500 ease-out
-        "
-      >
-        <img
-          src={slides[0].image}
-          alt="left banner"
-          className="w-full h-full object-cover"
-        />
+            {/* Left Arrow - appear on hover */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 shadow-md p-3 rounded-full transition opacity-0 group-hover:opacity-100"
+            >
+              ‹
+            </button>
+
+            {/* Right Arrow - appear on hover */}
+            <button
+              onClick={nextSlide}
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 shadow-md p-3 rounded-full transition opacity-0 group-hover:opacity-100"
+            >
+              ›
+            </button>
+          </div>
+        ))}
+
+        {/* Thumbnails */}
+        <div className="absolute bottom-4 flex space-x-3">
+          {sliderData.map((slide, index) => (
+            <img
+              key={slide.id}
+              src={slide.image}
+              alt=""
+              onClick={() => goToSlide(index)}
+              className={`w-16 h-10 object-cover rounded cursor-pointer border-2 transition-all ${
+                current === index ? "border-red-500" : "border-transparent"
+              } hover:border-red-500`}
+            />
+          ))}
+        </div>
       </div>
-
-      {/* RIGHT SLIDE (on hover) */}
-      <div
-        className="
-          absolute top-0 right-0 h-full w-[260px]
-          translate-x-full
-          group-hover:translate-x-0
-          transition-transform duration-500 ease-out
-        "
-      >
-        <img
-          src={slides[1].image}
-          alt="right banner"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      {/* LEFT ARROW */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white w-10 h-10 rounded-full shadow z-20"
-      >
-        ❮
-      </button>
-
-      {/* RIGHT ARROW */}
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white w-10 h-10 rounded-full shadow z-20"
-      >
-        ❯
-      </button>
     </div>
   );
-}
+};
+
+export default HeroSlider;

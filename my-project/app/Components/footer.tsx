@@ -9,12 +9,15 @@ import {
   FaYoutube,
   FaPinterestP,
 } from "react-icons/fa";
+import { FiShare } from "react-icons/fi";
+import { FiMail } from "react-icons/fi";
+
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-[#0f172a] to-[#020617] text-gray-300">
+    <footer className="bg-gradient-to-b from-[#0f172a] to-[#020617] text-gray-300 ">
       {/* TOP FEATURES */}
-      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
         {[
           {
             icon: <FaTruck />,
@@ -50,10 +53,15 @@ export default function Footer() {
             </div>
           </div>
         ))}
+        
       </div>
+      <hr className="my-8 w-full max-w-9xl mx-auto border-t border-white/20" />
+
+     
+
 
       {/* MAIN FOOTER */}
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 ">
         {/* BRAND */}
         <div>
           <h2 className="text-2xl font-bold text-blue-400 mb-4">BDPlaza</h2>
@@ -65,16 +73,22 @@ export default function Footer() {
           <h4 className="text-white font-semibold mb-3">
             Subscribe to Newsletter
           </h4>
-          <div className="flex">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-l-md focus:outline-none"
-            />
-            <button className="px-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-r-md text-white">
-              →
-            </button>
-          </div>
+         <div className="flex w-full max-w-7xl mx-auto mt-10 items-center gap-4">
+  {/* Input with email icon */}
+  <div className="relative flex-1">
+    <FiMail className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70" size={20} />
+    <input
+      type="email"
+      placeholder="Enter your email"
+      className=" px-15  py-3 text-lg bg-white/10 border border-white/20 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+    />
+  </div>
+
+  {/* Share button */}
+  <button className="flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md text-white gap-2 hover:scale-105 transition-transform duration-200">
+    Share <FiShare size={24} />
+  </button>
+</div>
 
           <div className="mt-6 space-y-2 text-sm">
             <p>📞 +880 123-456-7890</p>

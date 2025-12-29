@@ -1,59 +1,23 @@
 import { Link } from "react-router";
- const products = [
-  {
-    id: 1,
-    name: "Dram Hose Reel 25mm",
-    price: 15000,
-    image: "https://i.postimg.cc/3Nk2X6Jh/lt1ampdxp3kmuzgczf6w.webp",
-  },
-  {
-    id: 2,
-    name: "Hose Pipe",
-    price: 500,
-    image: "https://i.postimg.cc/zBbnW6fJ/gxtmmgy97eotzk0vpojj.jpg",
-  },
-  {
-    id: 3,
-    name: "Hose Rack",
-    price: 8520,
-    image: "https://i.postimg.cc/Mp6VtvGr/sug8bf736y55ed2rhopl.webp",
-  },
-  {
-    id: 4,
-    name: "Recessed Plate Chrom",
-    price: 544.5,
-    oldPrice: 550,
-    discount: "-1%",
-    image: "https://i.postimg.cc/R0qf5yKb/s2qfr1l8m9bcls4vnxwr.jpg",
-  },
-  {
-    id: 5,
-    name: "Sprinkler Head Upright 8.0",
-    price: 3000,
-    image: "https://i.postimg.cc/vBrZptq5/jyyxs2jfhcnnfv1i4y2c.jpg",
-  },
-  {
-    id: 6,
-    name: "Sprinkler Head SR 15",
-    price: 273,
-    image: "https://i.postimg.cc/655pmRdh/hv8xq5r7t6egvnvxucnn-(1).jpg",
-  },
-  {
-    id: 7,
-    name: "Check Valve Silent",
-    price: 1999.99,
-    image: "https://i.postimg.cc/7hrTzLcR/wqsnzsi6di86nahrrdg2.jpg",
-  },
-  {
-    id: 8,
-    name: "Check Valve",
-    price: 1499.99,
-    image: "https://i.postimg.cc/q7ttZnHs/fmkojd7q6od8xhfx3aih.webp",
-  },
-];
+import { useEffect, useState } from "react";
+ 
+    
 
 
 export default function RecentProducts() {
+  const [products, setProducts] = useState([]);
+  
+    useEffect(() => {
+      fetch("/recentproduct.JSON")
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error("Failed to fetch products");
+          }
+          return res.json();
+        })
+        .then((data) => setProducts(data))
+        .catch((err) => console.error("Error loading products:", err));
+    }, []);
   return (
     <section className="max-w-7xl mx-auto px-6 py-12">
       {/* HEADER */}
@@ -69,8 +33,7 @@ export default function RecentProducts() {
           View All Products →
         </Link>
       </div>
-
-      {/* PRODUCTS GRID */}
+  {/* PRODUCTS GRID */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
         {products.map((product) => (
           <div
@@ -120,5 +83,6 @@ export default function RecentProducts() {
         ))}
       </div>
     </section>
+     
   );
 }

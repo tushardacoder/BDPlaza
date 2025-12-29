@@ -1,22 +1,21 @@
 import { Link } from "react-router";
- const products = [
-  {
-    id: 1,
-    name: "Hand Gloves",
-    price: 1000,
-    image: "https://i.postimg.cc/G3BC8QJq/uibfbehgwcu99vqw0u7f.jpg",
-  },
-  {
-    id: 2,
-    name: "Exit Light",
-    price: 1500,
-    image: "https://i.postimg.cc/L8D70Y3B/hha6njlpfapqg4gpb6tf.jpg",
-  },
- 
-];
+ import { useEffect, useState } from "react";
 
 
 export default function Firefightingproduct() {
+   const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("/fireproduct.JSON")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to fetch products");
+        }
+        return res.json();
+      })
+      .then((data) => setProducts(data))
+      .catch((err) => console.error("Error loading products:", err));
+  }, []);
   return (
     <section className="max-w-7xl mx-auto px-6 py-12">
       {/* HEADER */}
@@ -32,8 +31,7 @@ export default function Firefightingproduct() {
           View All Products →
         </Link>
       </div>
-
-      {/* PRODUCTS GRID */}
+          {/* PRODUCTS GRID */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
         {products.map((product) => (
           <div
@@ -83,5 +81,8 @@ export default function Firefightingproduct() {
         ))}
       </div>
     </section>
+
+
+      
   );
 }

@@ -32,17 +32,32 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body
+        className="
+    min-h-screen
+    bg-white text-gray-900
+    dark:bg-gray-900 dark:text-gray-100
+    antialiased
+  "
+      >
         {children}
         <ScrollRestoration />
         <Scripts />
       </body>
+
     </html>
   );
 }
 
 export default function App() {
-  return <Outlet />;
+  
+  return (
+    <main className="min-h-screen">
+      <Outlet />
+    </main>
+  );
+
+
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
