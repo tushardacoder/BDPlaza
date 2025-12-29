@@ -1,4 +1,5 @@
 import { Outlet } from "react-router"
+import Footer from "~/Components/footer";
 
 
 import Header from "~/Components/header";
@@ -15,9 +16,12 @@ export default function MainLayout() {
 
             <Header />
             <Nav/>
+
             
             
             <Outlet />
+
+            <Footer/>
 
 
 
