@@ -75,8 +75,18 @@ const categories = [
     },
 ];
 
+const hoverColors = [
+    "from-sky-100 to-blue-100",
+    "from-indigo-100 to-violet-100",
+    "from-emerald-100 to-teal-100",
+    "from-rose-100 to-pink-100",
+    "from-amber-100 to-orange-100",
+    "from-cyan-100 to-sky-100",
+];
+
+
 export default function Popularcategories() {
-     
+
     return (
         <section className="max-w-7xl mx-auto px-6 py-14">
             {/* HEADER */}
@@ -98,35 +108,68 @@ export default function Popularcategories() {
                 </Link>
             </div>
 
-            {/* CATEGORY GRID */}
+            {/* p.. */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-9 gap-6">
                 {categories.map((cat) => {
                     const Icon = cat.icon;
+
+                    // random gradient per card
+                    const randomColor =
+                        hoverColors[Math.floor(Math.random() * hoverColors.length)];
 
                     return (
                         <Link
                             key={cat.id}
                             to={cat.path}
-                            className="group bg-white rounded-2xl p-6 flex flex-col items-center gap-4 shadow-sm hover:shadow-lg transition-all duration-300"
+                            className={`
+          group relative rounded-2xl p-6  bg-white
+          transition-all duration-300 ease-out
+          hover:shadow-sm
+          hover:bg-gradient-to-br ${randomColor}
+        `}
                         >
-                            <div
-                                className={`w-14 h-14 flex items-center justify-center rounded-xl border text-xl
-                ${cat.highlight
-                                        ? "text-emerald-500 border-emerald-200"
-                                        : "text-gray-700 border-gray-200"
-                                    }
-                group-hover:bg-gray-50`}
-                            >
-                                <Icon />
+                            {/* box outline effect */}
+                            <span
+                                className="
+            pointer-events-none absolute inset-0 rounded-2xl
+            ring-1 ring-transparent
+            group-hover:ring-gray-200
+            transition
+          "
+                            />
+
+                            {/* top-left dots */}
+                            <div className="absolute top-3 left-3 flex gap-1 opacity-0 group-hover:opacity-100 transition">
+                                <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
+                                <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
+                                <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
                             </div>
 
-                            <span className="text-sm font-medium text-gray-800 group-hover:text-blue-600 transition">
-                                {cat.name}
+                            {/* bottom-right arrow */}
+                            <span className="absolute bottom-4 right-4 opacity-0 translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition text-gray-600">
+                                →
                             </span>
+
+                            {/* content */}
+                            <div className="relative z-10 flex flex-col items-center gap-4 group">
+                                <div className="w-14 h-14 flex items-center justify-center rounded-xl border bg-white text-xl
+                  transform transition-all duration-300 ease-in
+                  group-hover:scale-110 group-hover:translate-x-2 group-hover:translate-y-2">
+                                    <Icon />
+                                </div>
+
+
+                                <span className="text-sm font-semibold text-gray-900">
+                                    {cat.name}
+                                </span>
+                            </div>
+
                         </Link>
                     );
                 })}
             </div>
+
+
         </section>
     );
 
