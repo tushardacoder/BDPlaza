@@ -9,7 +9,7 @@ import {
 
 export default [
     
-  layout("Layouts/MainLayout.tsx", [
+  layout("Layouts/Mainlayout.tsx", [
     index("./routes/home.tsx"),
        // About page
     //   route("user", "./routes/users.tsx"),   // Blogs page
