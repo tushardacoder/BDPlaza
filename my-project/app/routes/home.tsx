@@ -5,12 +5,14 @@ import Banner from "~/Components/banner";
 import Header from "~/Components/header";
 import Popularcategories from "~/Components/popularcategories";
 import RecentProducts from "~/Components/recentproduct";
-import Firefightingproduct from "~/Components/FireFightingproduct";
+
 import Ventilationproduct from "~/Components/ventilationproduct";
 import Firefightingsystem from "~/Components/firefightingsystem";
 import FireExtinguisher from "~/Components/fireExtinguisher";
-import Fireprotection from "~/Components/Fireprotection";
+
 import Firedetection from "~/Components/firedetection";
+import Firefightingproduct from "~/Components/firefightingproduct";
+import Fireprotection from "~/Components/fireprotection";
 
 export function meta({}: Route.MetaArgs) {
   return [
