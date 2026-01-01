@@ -77,19 +77,23 @@ const HeroSlider = () => {
         ))}
 
         {/* Thumbnails */}
-        <div className="absolute bottom-4 flex space-x-3">
-          {sliderData.map((slide, index) => (
-            <img
-              key={slide.id}
-              src={slide.image}
-              alt=""
-              onClick={() => goToSlide(index)}
-              className={`w-16 h-10 object-cover rounded cursor-pointer border-2 transition-all ${
-                current === index ? "border-red-500" : "border-transparent"
-              } hover:border-red-500`}
-            />
-          ))}
-        </div>
+       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 
+                max-w-full overflow-x-auto px-3">
+  {sliderData.map((slide, index) => (
+    <img
+      key={slide.id}
+      src={slide.image}
+      alt={`Slide ${index + 1}`}
+      onClick={() => goToSlide(index)}
+      className={`w-14 h-9 sm:w-16 sm:h-10 md:w-20 md:h-12 
+                  object-cover rounded cursor-pointer border-2 
+                  transition-all duration-300
+        ${current === index ? "border-red-500 scale-105" : "border-transparent"}
+        hover:border-red-500`}
+    />
+  ))}
+</div>
+
       </div>
     </div>
   );
