@@ -45,13 +45,13 @@ export default function Header() {
             ✨ Quick Links
           </h4>
           <ul className="space-y-2 text-sm">
-            <li className="flex justify-center gap-2 hover:text-blue-600 cursor-pointer">
+            <li className="flex justify-center gap-2 hover:text-blue-600 cursor-pointer font-bold">
               <FaTag /> Today’s Deals
             </li>
-            <li className="flex justify-center gap-2 hover:text-blue-600 cursor-pointer">
+            <li className="flex justify-center gap-2 hover:text-blue-600 cursor-pointer  font-bold">
               <FaBoxOpen /> New Arrivals
             </li>
-            <li className="flex justify-center gap-2 hover:text-blue-600 cursor-pointer">
+            <li className="flex justify-center gap-2 hover:text-blue-600 cursor-pointer  font-bold">
               <FaStar /> Best Sellers
             </li>
           </ul>

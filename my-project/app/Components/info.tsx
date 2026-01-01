@@ -32,7 +32,7 @@ export default function Info() {
                         <div className="flex justify-between items-center">
                             <div className="flex items-center gap-3 text-lg font-semibold">
                                 <span className="text-xl">🏪</span>
-                                <span>E-Marketplace</span>
+                                <span className="font-bold">E-Marketplace</span>
                             </div>
                             <span
                                 className={`text-green-600 transition-transform ${open === 0 ? "rotate-180" : ""
@@ -69,7 +69,7 @@ export default function Info() {
                         <div className="flex justify-between items-center">
                             <div className="flex items-center gap-3 text-lg font-semibold">
                                 <span className="text-xl">🛍️</span>
-                                <span>Buyers</span>
+                                <span className="font-bold">Buyers</span>
                             </div>
                             <span
                                 className={`text-green-600 transition-transform ${open === 1 ? "rotate-180" : ""
@@ -106,7 +106,7 @@ export default function Info() {
                         <div className="flex justify-between items-center">
                             <div className="flex items-center gap-3 text-lg font-semibold">
                                 <span className="text-xl">💼</span>
-                                <span>Sellers</span>
+                                <span className="font-bold">Sellers</span>
                             </div>
                             <span
                                 className={`text-green-600 transition-transform ${open === 2 ? "rotate-180" : ""
